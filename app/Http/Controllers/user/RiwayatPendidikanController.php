@@ -1,30 +1,26 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\user;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Pegawai;
+use App\RiwayatPendidikan;
 use Illuminate\Http\Request;
 use Session;
 
-class PegawaiController extends Controller
+class RiwayatPendidikanController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\View\View
      */
-   
-
-    public function index(Request $request)
+    public function index()
     {
-       
-        $pegawai = Pegawai::where('nama', 'LIKE', '%'.(isset($request->search)?$request->search:'').'%')
-            ->paginate(isset($request->pagination)?$request->pagination:($request->pagination));
+        $riwayatpendidikan = RiwayatPendidikan::paginate(25);
 
-        return view('admin.pegawai.index', compact('pegawai'));
+        return view('admin.riwayatpendidikan.index', compact('riwayatpendidikan'));
     }
 
     /**
@@ -34,7 +30,7 @@ class PegawaiController extends Controller
      */
     public function create()
     {
-        return view('admin.pegawai.create');
+        return view('admin.riwayatpendidikan.create');
     }
 
     /**
@@ -49,11 +45,11 @@ class PegawaiController extends Controller
         
         $requestData = $request->all();
         
-        Pegawai::create($requestData);
+        RiwayatPendidikan::create($requestData);
 
-        Session::flash('flash_message', 'Pegawai added!');
+        Session::flash('flash_message', 'RiwayatPendidikan added!');
 
-        return redirect('admin/pegawai');
+        return redirect('admin/riwayatpendidikan');
     }
 
     /**
@@ -65,10 +61,9 @@ class PegawaiController extends Controller
      */
     public function show($id)
     {
-        $pegawai = Pegawai::findOrFail($id);
-        $riwayatpendidikan=$pegawai->riwayatpendidikan;
+        $riwayatpendidikan = RiwayatPendidikan::findOrFail($id);
 
-        return view('admin.pegawai.show', compact('pegawai','riwayatpendidikan'));
+        return view('admin.riwayatpendidikan.show', compact('riwayatpendidikan'));
     }
 
     /**
@@ -80,9 +75,9 @@ class PegawaiController extends Controller
      */
     public function edit($id)
     {
-        $pegawai = Pegawai::findOrFail($id);
+        $riwayatpendidikan = RiwayatPendidikan::findOrFail($id);
 
-        return view('admin.pegawai.edit', compact('pegawai'));
+        return view('admin.riwayatpendidikan.edit', compact('riwayatpendidikan'));
     }
 
     /**
@@ -98,12 +93,12 @@ class PegawaiController extends Controller
         
         $requestData = $request->all();
         
-        $pegawai = Pegawai::findOrFail($id);
-        $pegawai->update($requestData);
+        $riwayatpendidikan = RiwayatPendidikan::findOrFail($id);
+        $riwayatpendidikan->update($requestData);
 
-        Session::flash('flash_message', 'Pegawai updated!');
+        Session::flash('flash_message', 'RiwayatPendidikan updated!');
 
-        return redirect('admin/pegawai');
+        return redirect('admin/riwayatpendidikan');
     }
 
     /**
@@ -115,10 +110,10 @@ class PegawaiController extends Controller
      */
     public function destroy($id)
     {
-        Pegawai::destroy($id);
+        RiwayatPendidikan::destroy($id);
 
-        Session::flash('flash_message', 'Pegawai deleted!');
+        Session::flash('flash_message', 'RiwayatPendidikan deleted!');
 
-        return redirect('admin/pegawai');
+        return redirect('admin/riwayatpendidikan');
     }
 }

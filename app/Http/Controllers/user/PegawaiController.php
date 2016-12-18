@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\user;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -16,13 +16,9 @@ class PegawaiController extends Controller
      *
      * @return \Illuminate\View\View
      */
-   
-
-    public function index(Request $request)
+    public function index()
     {
-       
-        $pegawai = Pegawai::where('nama', 'LIKE', '%'.(isset($request->search)?$request->search:'').'%')
-            ->paginate(isset($request->pagination)?$request->pagination:($request->pagination));
+        $pegawai = Pegawai::paginate(25);
 
         return view('admin.pegawai.index', compact('pegawai'));
     }
@@ -66,9 +62,8 @@ class PegawaiController extends Controller
     public function show($id)
     {
         $pegawai = Pegawai::findOrFail($id);
-        $riwayatpendidikan=$pegawai->riwayatpendidikan;
 
-        return view('admin.pegawai.show', compact('pegawai','riwayatpendidikan'));
+        return view('admin.pegawai.show', compact('pegawai'));
     }
 
     /**

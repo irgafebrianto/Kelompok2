@@ -29,21 +29,21 @@
 <div class="form-group {{ $errors->has('jenkel') ? 'has-error' : ''}}">
     {!! Form::label('jenkel', 'Jenkel', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('jenkel', null, ['class' => 'form-control']) !!}
+        {!! Form::select('jenkel',['laki-laki'=>'Laki-Laki','perempuan'=> 'Perempuan'], null, ['class' => 'form-control']) !!}
         {!! $errors->first('jenkel', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group {{ $errors->has('agama') ? 'has-error' : ''}}">
     {!! Form::label('agama', 'Agama', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('agama', null, ['class' => 'form-control']) !!}
+        {!! Form::select('agama', ['islam'=>'Islam','kristen protestan'=> 'Kristen Protestan','katholik'=>'Katholik','budha'=>'Budha','hindu'=>'Hindu','kong hu chu'=>'Kong hu chu','lainnya'=>'Lainnya'],null, ['class' => 'form-control']) !!}
         {!! $errors->first('agama', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group {{ $errors->has('kebangsaan') ? 'has-error' : ''}}">
     {!! Form::label('kebangsaan', 'Kebangsaan', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('kebangsaan', null, ['class' => 'form-control']) !!}
+        {!! Form::select('kebangsaan',['wni'=>'WNI','wna'=>'WNA'], null, ['class' => 'form-control']) !!}
         {!! $errors->first('kebangsaan', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
@@ -57,22 +57,29 @@
 <div class="form-group {{ $errors->has('golongan') ? 'has-error' : ''}}">
     {!! Form::label('golongan', 'Golongan', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('golongan', null, ['class' => 'form-control']) !!}
+        {!! Form::select('golongan',['1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5'], null, ['class' => 'form-control']) !!}
         {!! $errors->first('golongan', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group {{ $errors->has('nama_istri') ? 'has-error' : ''}}">
-    {!! Form::label('nama_istri', 'Nama Istri', ['class' => 'col-md-4 control-label']) !!}
+    {!! Form::label('nama_istri', 'Nama Pasangan', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
         {!! Form::text('nama_istri', null, ['class' => 'form-control']) !!}
         {!! $errors->first('nama_istri', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group {{ $errors->has('pekerjaan_istri') ? 'has-error' : ''}}">
-    {!! Form::label('pekerjaan_istri', 'Pekerjaan Istri', ['class' => 'col-md-4 control-label']) !!}
+    {!! Form::label('pekerjaan_istri', 'Pekerjaan Pasangan', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
         {!! Form::text('pekerjaan_istri', null, ['class' => 'form-control']) !!}
         {!! $errors->first('pekerjaan_istri', '<p class="help-block">:message</p>') !!}
+    </div>
+</div>
+<div class="form-group {{ $errors->has('user_id') ? 'has-error' : ''}}">
+    {!! Form::label('user_id', 'User Id', ['class' => 'col-md-4 control-label']) !!}
+    <div class="col-md-6">
+        {!! Form::text('user_id', auth::id(), ['class' => 'form-control']) !!}
+        {!! $errors->first('user_id', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 

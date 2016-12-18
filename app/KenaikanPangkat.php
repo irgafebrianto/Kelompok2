@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class KenaikanPangkat extends Model
 {
     protected $fillable = [
@@ -11,6 +12,6 @@ class KenaikanPangkat extends Model
     ];
 
      public function pegawais(){
-        return $this->belongsTo('Pegawai');
+        return $this->belongsTo('App\Pegawai');
     }
 }

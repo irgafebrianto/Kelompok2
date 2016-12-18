@@ -27,13 +27,15 @@ class Pegawais extends Migration
             $table->string('nama_istri');
             $table->string('pekerjaan_istri');
 
-            //belum di foreign 
+           $table->unsignedInteger('user_id');
+
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onUpdate('cascade')->onDelete('cascade');
 
             
             
             $table->softDeletes();
             $table->timestamps();
-            
             
         });
     }
