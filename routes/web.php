@@ -21,6 +21,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+
+Route::get('/test', 'HomeController@show');
+
 Route::resource('admin/dataanak', 'DataAnakController');
 Route::resource('admin/datakepegawaian', 'DataKepegawaianController');
 Route::resource('admin/kenaikanpangkat', 'KenaikanPangkatController');

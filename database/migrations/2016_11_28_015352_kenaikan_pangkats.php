@@ -21,7 +21,7 @@ class KenaikanPangkats extends Migration
             $table->unsignedInteger('pegawai_id');
         
 
-            $table->foreign('pegawaicm_id')->references('id')->on('pegawais')
+            $table->foreign('pegawai_id')->references('id')->on('pegawais')
                 ->onUpdate('cascade')->onDelete('cascade');
             
             $table->softDeletes();

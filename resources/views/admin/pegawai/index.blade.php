@@ -1,18 +1,18 @@
-@extends('layouts.app')
+@extends('admin.layout')
 
 @section('content')
-    <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Pegawai</div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h2 class="panel-title" align="center"> Data Pegawai</h2>
+                </div>
                     <div class="panel-body">
 
-                        <a href="{{ url('/admin/pegawai/create') }}" class="btn btn-primary btn-xs" title="Add New pegawai"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></a>
+                        <a href="{{ url('/admin/pegawai/create') }}" class="btn btn-dark btn-xs" title="Add New pegawai"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></a>
                         <br/>
                         <br/>
                         <div class="table-responsive">
-                            <table class="table table-borderless">
+                            <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>ID</th><th> Nama </th><th> Nip </th><th> Alamat </th><th>Actions</th>
@@ -45,10 +45,7 @@
                             </table>
                             <div class="pagination-wrapper"> {!! $pegawai->render() !!} </div>
                         </div>
-
                     </div>
-                </div>
             </div>
         </div>
-    </div>
 @endsection
