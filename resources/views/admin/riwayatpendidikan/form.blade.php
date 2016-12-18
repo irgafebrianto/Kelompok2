@@ -8,7 +8,7 @@
 <div class="form-group {{ $errors->has('pendidikan') ? 'has-error' : ''}}">
     {!! Form::label('pendidikan', 'Pendidikan', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('pendidikan', null, ['class' => 'form-control']) !!}
+        {!! Form::select('pendidikan',['sd'=>'SD','smp'=>'SMP','sma / smk'=>'SMA / SMK','d3'=>'D3','d4 / s1'=>'D4 / S1','s2'=>'S2','s3'=>'S3'], null, ['class' => 'form-control']) !!}
         {!! $errors->first('pendidikan', '<p class="help-block">:message</p>') !!}
     </div>
 </div>

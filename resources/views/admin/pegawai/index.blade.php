@@ -6,10 +6,30 @@
                 <div class="panel-heading">
                     <h2 class="panel-title" align="center"> Data Pegawai</h2>
                 </div>
-                    <div class="panel-body">
-
+                    <div class="panel-body"> 
                         <a href="{{ url('/admin/pegawai/create') }}" class="btn btn-dark btn-xs" title="Add New pegawai"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></a>
                         <br/>
+                        <br/>
+                                            
+
+                        <form id="form_filter" >
+                                    <div class="row form-inline form-horizontal">
+                                        <div class="col-sm-12 col-md-7">
+                                           
+                                            <div class="col-md-4">
+                                               
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <div id="datatable-default_filter" class="dataTables_filter">
+                                                <label><input class="form-control" value="{{isset($_GET['search'])?$_GET['search']:''}}" name="search" placeholder="Search" aria-controls="datatable-default">
+                                                </label></div>
+                                        </div>
+                                    </div>
+                                    </form>
+                                        
+                         <br/>         
                         <br/>
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped">
@@ -44,6 +64,7 @@
                                 </tbody>
                             </table>
                             <div class="pagination-wrapper"> {!! $pegawai->render() !!} </div>
+
                         </div>
                     </div>
             </div>

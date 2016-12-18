@@ -8,7 +8,7 @@
 <div class="form-group {{ $errors->has('golongan') ? 'has-error' : ''}}">
     {!! Form::label('golongan', 'Golongan', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('golongan', null, ['class' => 'form-control']) !!}
+        {!! Form::select('golongan',['1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5'], null, ['class' => 'form-control']) !!}
         {!! $errors->first('golongan', '<p class="help-block">:message</p>') !!}
     </div>
 </div>

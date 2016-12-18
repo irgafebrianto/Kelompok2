@@ -11,6 +11,6 @@ class DataAnak extends Model
     ];
 
     public function pegawais(){
-        return $this->belongsTo('Pegawai');
+        return $this->belongsTo('App\Pegawai');
     }
 }
