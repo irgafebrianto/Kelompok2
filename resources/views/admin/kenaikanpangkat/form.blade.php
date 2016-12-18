@@ -15,8 +15,15 @@
 <div class="form-group {{ $errors->has('tahun') ? 'has-error' : ''}}">
     {!! Form::label('tahun', 'Tahun', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('tahun', null, ['class' => 'form-control']) !!}
+        {!! Form::date('tahun', null, ['class' => 'form-control']) !!}
         {!! $errors->first('tahun', '<p class="help-block">:message</p>') !!}
+    </div>
+</div>
+<div class="form-group {{ $errors->has('tahun_naik') ? 'has-error' : ''}}">
+    {!! Form::label('tahun_naik', 'Tahun Naik', ['class' => 'col-md-4 control-label']) !!}
+    <div class="col-md-6">
+        {!! Form::date('tahun_naik', null, ['class' => 'form-control']) !!}
+        {!! $errors->first('tahun_naik', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group {{ $errors->has('pegawai_id') ? 'has-error' : ''}}">
