@@ -21,9 +21,9 @@
                                     <tr><th> Nip </th><td> {{ $pegawai->nip }} </td></tr><tr>
                                     <th> Alamat </th><td colspan="2"> {{ $pegawai->alamat }} </td></tr>
                                     <tr><th> Agama </th><td colspan="2"> {{ $pegawai->agama }}</td></tr>
-                                    <tr><th> Telepon </th><td colspan="2"> {{ $pegawai->telepon }}</td></tr>
+                                    <tr><th> Telepon </th><td colspan="2"> {{ $pegawai->telpon }}</td></tr>
                                     <tr><th> Golongan </th><td colspan="2"> {{ $pegawai->golongan }}</td></tr>
-                                    <tr><th> Nama Pasangan </th><td colspan="2"> {{ $pegawai->nama_pasangan }}</td></tr>
+                                    <tr><th> Nama Pasangan </th><td colspan="2"> {{ $pegawai->nama_istri }}</td></tr>
 
 
                                     @foreach($pegawai->data_anaks()->get() as $item)  
