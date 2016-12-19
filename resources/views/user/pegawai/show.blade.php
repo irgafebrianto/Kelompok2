@@ -95,7 +95,7 @@
                                 <tbody>
                                 @foreach($pegawai->kenaikan_pangkats()->get() as $item) 
                                     
-                                    <tr><th> Tahun </th><td> {{ $item->tahun }} </td></tr><tr><th> Pendidikan </th><td> {{ $item->tahun_naik }}</td></tr>
+                                    <tr><th> Tahun </th><td> {{ $item->tahun }} </td></tr><tr><th> Tahun Naik </th><td> {{ $item->tahun_naik }}</td></tr>
                                 @endforeach
                                 </tbody>
                             </table>
