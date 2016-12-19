@@ -38,11 +38,13 @@
                                     <tr><th> Tahun </th><td> {{ $item->tahun }} </td></tr>
                                      @endforeach
 
+
                                     @foreach($pegawai->data_anaks()->get() as $item)  
                                      
                                     <tr><th> Nama Anak </th><td><a href= "{{url('/admin/dataanak/'.$item->id)}}">LINK DATA ANAK</a></td></tr>
                                 
                                      @endforeach 
+
 
                                 </tbody>
                                      
