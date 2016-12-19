@@ -18,12 +18,12 @@
 
                         {!! Form::model($datakepegawaian, [
                             'method' => 'PATCH',
-                            'url' => ['/admin/datakepegawaian', $datakepegawaian->id],
+                            'url' => ['/user/datakepegawaian', $datakepegawaian->id],
                             'class' => 'form-horizontal',
                             'files' => true
                         ]) !!}
 
-                        @include ('admin.datakepegawaian.form', ['submitButtonText' => 'Update'])
+                        @include ('user.datakepegawaian.form', ['submitButtonText' => 'Update'])
 
                         {!! Form::close() !!}
 

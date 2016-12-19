@@ -8,7 +8,7 @@
                     <div class="panel-heading">Datakepegawaian</div>
                     <div class="panel-body">
 
-                        <a href="{{ url('/admin/datakepegawaian/create') }}" class="btn btn-primary btn-xs" title="Add New datakepegawaian"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></a>
+                        <a href="{{ url('/user/datakepegawaian/create') }}" class="btn btn-primary btn-xs" title="Add New datakepegawaian"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></a>
                         <br/>
                         <br/>
                         <div class="table-responsive">
@@ -24,20 +24,9 @@
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->jabatan }}</td><td>{{ $item->golongan }}</td><td>{{ $item->status }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/datakepegawaian/' . $item->id) }}" class="btn btn-success btn-xs" title="View datakepegawaian"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
-                                            <a href="{{ url('/admin/datakepegawaian/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit datakepegawaian"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
-                                            {!! Form::open([
-                                                'method'=>'DELETE',
-                                                'url' => ['/admin/datakepegawaian', $item->id],
-                                                'style' => 'display:inline'
-                                            ]) !!}
-                                                {!! Form::button('<span class="glyphicon glyphicon-trash" aria-hidden="true" title="Delete datakepegawaian" />', array(
-                                                        'type' => 'submit',
-                                                        'class' => 'btn btn-danger btn-xs',
-                                                        'title' => 'Delete datakepegawaian',
-                                                        'onclick'=>'return confirm("Confirm delete?")'
-                                                )) !!}
-                                            {!! Form::close() !!}
+                                            <a href="{{ url('/user/datakepegawaian/' . $item->id) }}" class="btn btn-success btn-xs" title="View datakepegawaian"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
+                                            <a href="{{ url('/user/datakepegawaian/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit datakepegawaian"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
+                                            
                                         </td>
                                     </tr>
                                 @endforeach
