@@ -16,12 +16,7 @@ class KenaikanPangkatController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index()
-    {
-        $kenaikanpangkat = KenaikanPangkat::paginate(25);
-
-        return view('admin.kenaikanpangkat.index', compact('kenaikanpangkat'));
-    }
+    
     
 
     /**
@@ -29,10 +24,7 @@ class KenaikanPangkatController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
-    {
-        return view('admin.kenaikanpangkat.create');
-    }
+   
 
     /**
      * Store a newly created resource in storage.
@@ -50,7 +42,7 @@ class KenaikanPangkatController extends Controller
 
         Session::flash('flash_message', 'KenaikanPangkat added!');
 
-        return redirect('admin/kenaikanpangkat');
+        return redirect('user/kenaikanpangkat');
     }
 
     /**
@@ -64,7 +56,7 @@ class KenaikanPangkatController extends Controller
     {
         $kenaikanpangkat = KenaikanPangkat::findOrFail($id);
 
-        return view('admin.kenaikanpangkat.show', compact('kenaikanpangkat'));
+        return view('user.kenaikanpangkat.show', compact('kenaikanpangkat'));
     }
 
     /**
@@ -78,7 +70,7 @@ class KenaikanPangkatController extends Controller
     {
         $kenaikanpangkat = KenaikanPangkat::findOrFail($id);
 
-        return view('admin.kenaikanpangkat.edit', compact('kenaikanpangkat'));
+        return view('user.kenaikanpangkat.edit', compact('kenaikanpangkat'));
     }
 
     /**
@@ -99,7 +91,8 @@ class KenaikanPangkatController extends Controller
 
         Session::flash('flash_message', 'KenaikanPangkat updated!');
 
-        return redirect('admin/kenaikanpangkat');
+        
+        return redirect('user/kenaikanpangkat/'.$kenaikanpangkat->id);
     }
 
     /**
@@ -109,12 +102,5 @@ class KenaikanPangkatController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function destroy($id)
-    {
-        KenaikanPangkat::destroy($id);
-
-        Session::flash('flash_message', 'KenaikanPangkat deleted!');
-
-        return redirect('admin/kenaikanpangkat');
-    }
+    
 }

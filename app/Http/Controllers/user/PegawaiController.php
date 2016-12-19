@@ -20,7 +20,7 @@ class PegawaiController extends Controller
     {
         $pegawai = Pegawai::paginate(25);
 
-        return view('admin.pegawai.index', compact('pegawai'));
+        return view('user.pegawai.index', compact('pegawai'));
     }
 
     /**
@@ -28,18 +28,7 @@ class PegawaiController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
-    {
-        return view('admin.pegawai.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
+    
     public function store(Request $request)
     {
         
@@ -49,7 +38,7 @@ class PegawaiController extends Controller
 
         Session::flash('flash_message', 'Pegawai added!');
 
-        return redirect('admin/pegawai');
+        return redirect('user/pegawai');
     }
 
     /**
@@ -63,7 +52,7 @@ class PegawaiController extends Controller
     {
         $pegawai = Pegawai::findOrFail($id);
 
-        return view('admin.pegawai.show', compact('pegawai'));
+        return view('user.pegawai.show', compact('pegawai'));
     }
 
     /**
@@ -77,7 +66,7 @@ class PegawaiController extends Controller
     {
         $pegawai = Pegawai::findOrFail($id);
 
-        return view('admin.pegawai.edit', compact('pegawai'));
+        return view('user.pegawai.edit', compact('pegawai'));
     }
 
     /**
@@ -98,7 +87,7 @@ class PegawaiController extends Controller
 
         Session::flash('flash_message', 'Pegawai updated!');
 
-        return redirect('admin/pegawai');
+        return redirect('user/pegawai');
     }
 
     /**
@@ -108,12 +97,5 @@ class PegawaiController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function destroy($id)
-    {
-        Pegawai::destroy($id);
-
-        Session::flash('flash_message', 'Pegawai deleted!');
-
-        return redirect('admin/pegawai');
-    }
+    
 }

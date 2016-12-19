@@ -22,7 +22,10 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    { 
+        $user
         return view('home');
     }
+
+   
 }

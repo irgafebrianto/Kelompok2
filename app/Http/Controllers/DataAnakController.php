@@ -66,6 +66,9 @@ class DataAnakController extends Controller
         return view('admin.dataanak.show', compact('dataanak'));
     }
 
+    
+
+
     /**
      * Show the form for editing the specified resource.
      *

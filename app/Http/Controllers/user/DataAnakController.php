@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\DataAnak;
 use Illuminate\Http\Request;
 use Session;
+use App\Pegawai;
 
 class DataAnakController extends Controller
 {
@@ -20,7 +21,7 @@ class DataAnakController extends Controller
     {
         $dataanak = DataAnak::paginate(25);
 
-        return view('admin.dataanak.index', compact('dataanak'));
+        return view('user.dataanak.index', compact('dataanak'));
     }
 
     /**
@@ -28,10 +29,7 @@ class DataAnakController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
-    {
-        return view('admin.dataanak.create');
-    }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -49,7 +47,7 @@ class DataAnakController extends Controller
 
         Session::flash('flash_message', 'DataAnak added!');
 
-        return redirect('admin/dataanak');
+        return redirect('user/dataanak');
     }
 
     /**
@@ -62,8 +60,8 @@ class DataAnakController extends Controller
     public function show($id)
     {
         $dataanak = DataAnak::findOrFail($id);
-
-        return view('admin.dataanak.show', compact('dataanak'));
+        $pegawai = $dataanak->pegawai;
+        return view('user.dataanak.show', compact('dataanak','pegawai'));
     }
 
     /**
@@ -77,7 +75,7 @@ class DataAnakController extends Controller
     {
         $dataanak = DataAnak::findOrFail($id);
 
-        return view('admin.dataanak.edit', compact('dataanak'));
+        return view('user.dataanak.edit', compact('dataanak'));
     }
 
     /**
@@ -98,7 +96,7 @@ class DataAnakController extends Controller
 
         Session::flash('flash_message', 'DataAnak updated!');
 
-        return redirect('admin/dataanak');
+        return redirect('user/dataanak/'.$dataanak->id);
     }
 
     /**
@@ -114,6 +112,6 @@ class DataAnakController extends Controller
 
         Session::flash('flash_message', 'DataAnak deleted!');
 
-        return redirect('admin/dataanak');
+        return redirect('user/dataanak');
     }
 }

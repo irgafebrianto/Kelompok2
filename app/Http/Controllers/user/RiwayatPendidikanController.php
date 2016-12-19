@@ -20,7 +20,7 @@ class RiwayatPendidikanController extends Controller
     {
         $riwayatpendidikan = RiwayatPendidikan::paginate(25);
 
-        return view('admin.riwayatpendidikan.index', compact('riwayatpendidikan'));
+        return view('user.riwayatpendidikan.index', compact('riwayatpendidikan'));
     }
 
     /**
@@ -28,11 +28,7 @@ class RiwayatPendidikanController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
-    {
-        return view('admin.riwayatpendidikan.create');
-    }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -49,7 +45,7 @@ class RiwayatPendidikanController extends Controller
 
         Session::flash('flash_message', 'RiwayatPendidikan added!');
 
-        return redirect('admin/riwayatpendidikan');
+        return redirect('user/riwayatpendidikan');
     }
 
     /**
@@ -63,7 +59,7 @@ class RiwayatPendidikanController extends Controller
     {
         $riwayatpendidikan = RiwayatPendidikan::findOrFail($id);
 
-        return view('admin.riwayatpendidikan.show', compact('riwayatpendidikan'));
+        return view('user.riwayatpendidikan.show', compact('riwayatpendidikan'));
     }
 
     /**
@@ -77,7 +73,7 @@ class RiwayatPendidikanController extends Controller
     {
         $riwayatpendidikan = RiwayatPendidikan::findOrFail($id);
 
-        return view('admin.riwayatpendidikan.edit', compact('riwayatpendidikan'));
+        return view('user.riwayatpendidikan.edit', compact('riwayatpendidikan'));
     }
 
     /**
@@ -98,7 +94,7 @@ class RiwayatPendidikanController extends Controller
 
         Session::flash('flash_message', 'RiwayatPendidikan updated!');
 
-        return redirect('admin/riwayatpendidikan');
+        return redirect('user/riwayatpendidikan/'.$riwayatpendidikan->id);
     }
 
     /**
@@ -108,12 +104,5 @@ class RiwayatPendidikanController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function destroy($id)
-    {
-        RiwayatPendidikan::destroy($id);
-
-        Session::flash('flash_message', 'RiwayatPendidikan deleted!');
-
-        return redirect('admin/riwayatpendidikan');
-    }
+    
 }
