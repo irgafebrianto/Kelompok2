@@ -1,13 +1,12 @@
-@extends('layouts.app')
+@extends('admin.layout')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Edit kenaikanpangkat {{ $kenaikanpangkat->id }}</div>
+    <div class="row">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h2 class="panel-title" align="center"> Edit data kenaikan pangkat {{ $kenaikanpangkat->id }}</h2>
+                </div>
                     <div class="panel-body">
-
                         @if ($errors->any())
                             <ul class="alert alert-danger">
                                 @foreach ($errors->all() as $error)
@@ -31,5 +30,4 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection

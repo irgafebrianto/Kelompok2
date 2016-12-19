@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('admin.layout')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Edit dataanak {{ $dataanak->id }}</div>
+    <div class="row">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h2 class="panel-title" align="center"> Edit data anak {{ $dataanak->id }}</h2>
+                </div>
                     <div class="panel-body">
 
                         @if ($errors->any())
