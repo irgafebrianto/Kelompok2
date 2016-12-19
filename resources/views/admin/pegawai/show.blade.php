@@ -35,6 +35,8 @@
                                     <tr><th> Pendidikan </th><td> {{ $item->pendidikan }} </td></tr>
                                     <tr><th> Tahun </th><td> {{ $item->tahun }} </td></tr>
                                      @endforeach
+
+
                                 </tbody>
                             </table>
                         </div>
