@@ -21,7 +21,7 @@ class Pegawai extends Model
     public function kenaikan_pangkats(){
         return $this->hasMany('App\KenaikanPangkat');
     }
-    public function data_anakas(){
+    public function data_anaks(){
         return $this->hasMany('App\DataAnak');
     }
 

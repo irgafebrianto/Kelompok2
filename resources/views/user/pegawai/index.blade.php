@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('user.layout')
 
 @section('content')
         <div class="row">
@@ -31,12 +31,12 @@
                                     
                                     
                                     <td colspan="5">
-                                    <a href="{{ url('/admin/pegawai/create') }}" class="btn btn-dark btn-xs" title="Add New pegawai"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></a>
+                                   
                                 
                                         <div class="col-sm-12 col-md-12">
                                             <div id="datatable-default_filter" class="dataTables_filter" align="right">
-                                            <font color='red' >*Cari berdasarkan Nama </font>
-                                                <label><input class="form-control" value="{{isset($_GET['search'])?$_GET['search']:''}}" name="search" placeholder="Search" aria-controls="datatable-default">
+                                           
+                                                <label><input class="form-control" value="{{isset($_GET['search'])?$_GET['search']:''}}" name="search" placeholder="Search Nama Pegawai" aria-controls="datatable-default">
                                                 </label>
 
                                             </div>
@@ -53,20 +53,10 @@
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->nama }}</td><td>{{ $item->nip }}</td><td>{{ $item->alamat }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/pegawai/' . $item->id) }}" class="btn btn-success btn-xs" title="View pegawai"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
-                                            <a href="{{ url('/admin/pegawai/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit pegawai"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
-                                            {!! Form::open([
-                                                'method'=>'DELETE',
-                                                'url' => ['/admin/pegawai', $item->id],
-                                                'style' => 'display:inline'
-                                            ]) !!}
-                                                {!! Form::button('<span class="glyphicon glyphicon-trash" aria-hidden="true" title="Delete pegawai" />', array(
-                                                        'type' => 'submit',
-                                                        'class' => 'btn btn-danger btn-xs',
-                                                        'title' => 'Delete pegawai',
-                                                        'onclick'=>'return confirm("Confirm delete?")'
-                                                )) !!}
-                                            {!! Form::close() !!}
+                                            <a href="{{ url('/user/pegawai/' . $item->id) }}" class="btn btn-success btn-xs" title="View pegawai"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
+
+                                            <a href="{{ url('/user/pegawai/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit pegawai"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
+                                            
                                         </td>
                                     </tr>
                                 @endforeach

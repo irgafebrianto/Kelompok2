@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Pegawai;
 use Illuminate\Http\Request;
 use Session;
+use App\DataAnak;
 
 class PegawaiController extends Controller
 {
@@ -66,9 +67,10 @@ class PegawaiController extends Controller
     public function show($id)
     {
         $pegawai = Pegawai::findOrFail($id);
-        $riwayatpendidikan=$pegawai->riwayatpendidikan;
+        //$riwayatpendidikan=$pegawai->riwayatpendidikan;
+        //$dataanak=$pegawai->dataanak;
 
-        return view('admin.pegawai.show', compact('pegawai','riwayatpendidikan'));
+        return view('admin.pegawai.show', compact('pegawai'));
     }
 
     /**

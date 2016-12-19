@@ -28,14 +28,26 @@
                             <table class="table table-borderless">
                                 <tbody>
                                     <tr>
-                                        <th>ID</th><td>{{ $pegawai->id }}</td>
+
+                                        <th>ID</th><td colspan="2">{{ $pegawai->id }}</td>
                                     </tr>
-                                    <tr><th> Nama </th><td> {{ $pegawai->nama }} </td></tr><tr><th> Nip </th><td> {{ $pegawai->nip }} </td></tr><tr><th> Alamat </th><td> {{ $pegawai->alamat }} </td></tr>
-                                    <tr><th> Agama </th><td> {{ $pegawai->agama }} </td></tr>@foreach($pegawai->riwayat_pendidikans()->get() as $item)  
-                                    <tr><th> Pendidikan </th><td> {{ $item->pendidikan }} </td></tr>
+                                    <tr><th> Nama </th><td colspan="2"> {{ $pegawai->nama }} </td></tr><tr><th> Nip </th><td> {{ $pegawai->nip }} </td></tr><tr><th> Alamat </th><td colspan="2"> {{ $pegawai->alamat }} </td></tr>
+                                    <tr><th> Agama </th><td colspan="2"> {{ $pegawai->agama }} </td></tr>
+                                    @foreach($pegawai->riwayat_pendidikans()->get() as $item)  
+                                    <tr><th> Pendidikan </th><td colspan="2"> {{ $item->pendidikan }} </td></tr>
                                     <tr><th> Tahun </th><td> {{ $item->tahun }} </td></tr>
                                      @endforeach
+
+                                    @foreach($pegawai->data_anaks()->get() as $item)  
+                                     
+                                    <tr><th> Nama Anak </th><td><a href= "{{url('/admin/dataanak/'.$item->id)}}">LINK DATA ANAK</a></td></tr>
+                                
+                                     @endforeach 
+
                                 </tbody>
+                                     
+
+                                    
                             </table>
                         </div>
 
