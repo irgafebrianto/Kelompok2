@@ -12,36 +12,25 @@
                                      
 
                         <form id="form_filter" >
-                                    <div class="row form-inline form-horizontal">
-                                        <div class="col-sm-12 col-md-7">
-                                           
-                                            <div class="col-md-4">
-                                               
-                                            </div>
-
+                                    <div class="row form-inline form-horizontal"> 
+                                        <div class="col-sm-12 col-md-9">
                                         </div>
-                                        
+                                        <div class="col-sm-12 col-md-9">
+                                            <div id="datatable-default_filter" class="dataTables_filter">
+                                    <td colspan="5">
+                                    <a href="{{ url('/admin/pegawai/create') }}" class="btn btn-dark btn-xs" title="Add New pegawai"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></a>
+                                     </td>
+                                                <label><input class="form-control" value="{{isset($_GET['search'])?$_GET['search']:''}}" name="search" placeholder="Search" aria-controls="datatable-default">
+                                                </label></div>
+                                        </div>
                                     </div>
-                                    </form>      
+                        </form>   
                         
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped">
-                                <thead>
+                                   <thead>
                                     <tr>
                                     
-                                    
-                                    <td colspan="5">
-                                    <a href="{{ url('/admin/pegawai/create') }}" class="btn btn-dark btn-xs" title="Add New pegawai"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></a>
-                                
-                                        <div class="col-sm-12 col-md-12">
-                                            <div id="datatable-default_filter" class="dataTables_filter" align="right">
-                                            <font color='red' >*Cari berdasarkan Nama </font>
-                                                <label><input class="form-control" value="{{isset($_GET['search'])?$_GET['search']:''}}" name="search" placeholder="Search" aria-controls="datatable-default">
-                                                </label>
-
-                                            </div>
-                                        </div>
-                                        </td>
                                     </tr>
                                     <tr>
                                         <th>ID</th><th> Nama </th><th> Nip </th><th> Alamat </th><th>Actions</th>

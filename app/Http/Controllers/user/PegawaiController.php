@@ -16,13 +16,13 @@ class PegawaiController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        $pegawai = Pegawai::paginate(25);
+        $pegawai = Pegawai::where('nama', 'LIKE', '%'.(isset($request->search)?$request->search:'').'%')
+            ->paginate(isset($request->pagination)?$request->pagination:($request->pagination));
 
-        return view('user.pegawai.index', compact('pegawai'));
+        return view('admin.pegawai.index', compact('pegawai'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
