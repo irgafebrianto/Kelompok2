@@ -27,28 +27,28 @@
 						</a>
 						<ul class="nav nav-children">
 							<li>
-								<a href="{{url('/admin/configuration')}}">
-									Configuration
+								<a href="{{url('/admin/pegawai')}}">
+									Pegawai
 								</a>
 							</li>
 							<li>
-								<a href="{{url('/admin/type')}}">
-									Type
+								<a href="{{url('/admin/datakepegawaian')}}">
+									Kepegawaian
 								</a>
 							</li>
 							<li>
-								<a href="{{url('/admin/post')}}">
-									Post
+								<a href="{{url('/admin/dataanak')}}">
+									Data Anak
 								</a>
 							</li>
 							<li>
-								<a href="{{url('/admin/comment')}}">
-									Comment
+								<a href="{{url('/admin/kenaikanpangkat')}}">
+									Kenaikan Pangkat
 								</a>
 							</li>
 							<li>
-								<a href="{{url('/admin/category')}}">
-									Category
+								<a href="{{url('/admin/riwayatpendidikan')}}">
+									Riwayat Pendidikan
 								</a>
 							</li>
 						</ul>
