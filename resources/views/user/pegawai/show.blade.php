@@ -84,9 +84,7 @@
                     <h2 class="panel-title" align="center"> Kenaikan Pangkat</h2>
                 </div>
                  <div class="panel-body">
-                        @foreach($pegawai->kenaikan_pangkats()->get() as $item) 
-                        <a href="{{ url('user/kenaikanpangkat/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit Kenaikan Pangkat"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
-                        @endforeach
+                       
                         <br/>
                         <br/>
 
