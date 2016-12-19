@@ -21,7 +21,7 @@ class PegawaiController extends Controller
         $pegawai = Pegawai::where('nama', 'LIKE', '%'.(isset($request->search)?$request->search:'').'%')
             ->paginate(isset($request->pagination)?$request->pagination:($request->pagination));
 
-        return view('admin.pegawai.index', compact('pegawai'));
+        return view('user.pegawai.index', compact('pegawai'));
     }
     /**
      * Show the form for creating a new resource.
