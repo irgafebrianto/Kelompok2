@@ -11,7 +11,7 @@
                         <br/>
                                      
 
-                        < <form id="form_filter" >
+                        <form id="form_filter" >
                                     <div class="row form-inline form-horizontal"> 
                                         <div class="col-sm-12 col-md-9">
                                         </div>
