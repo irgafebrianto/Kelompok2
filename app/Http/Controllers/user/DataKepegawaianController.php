@@ -20,7 +20,7 @@ class DataKepegawaianController extends Controller
     {
         $datakepegawaian = DataKepegawaian::paginate(25);
 
-        return view('admin.datakepegawaian.index', compact('datakepegawaian'));
+        return view('user.datakepegawaian.index', compact('datakepegawaian'));
     }
 
     /**
@@ -28,10 +28,7 @@ class DataKepegawaianController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
-    {
-        return view('admin.datakepegawaian.create');
-    }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -49,7 +46,7 @@ class DataKepegawaianController extends Controller
 
         Session::flash('flash_message', 'DataKepegawaian added!');
 
-        return redirect('admin/datakepegawaian');
+        return redirect('user/datakepegawaian');
     }
 
     /**
@@ -63,7 +60,7 @@ class DataKepegawaianController extends Controller
     {
         $datakepegawaian = DataKepegawaian::findOrFail($id);
 
-        return view('admin.datakepegawaian.show', compact('datakepegawaian'));
+        return view('user.datakepegawaian.show', compact('datakepegawaian'));
     }
 
     /**
@@ -77,7 +74,7 @@ class DataKepegawaianController extends Controller
     {
         $datakepegawaian = DataKepegawaian::findOrFail($id);
 
-        return view('admin.datakepegawaian.edit', compact('datakepegawaian'));
+        return view('user.datakepegawaian.edit', compact('datakepegawaian'));
     }
 
     /**
@@ -98,7 +95,8 @@ class DataKepegawaianController extends Controller
 
         Session::flash('flash_message', 'DataKepegawaian updated!');
 
-        return redirect('admin/datakepegawaian');
+        return redirect('user/datakepegawaian/'.$datakepegawaian->id);
+       
     }
 
     /**
@@ -108,12 +106,5 @@ class DataKepegawaianController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function destroy($id)
-    {
-        DataKepegawaian::destroy($id);
-
-        Session::flash('flash_message', 'DataKepegawaian deleted!');
-
-        return redirect('admin/datakepegawaian');
-    }
+    
 }

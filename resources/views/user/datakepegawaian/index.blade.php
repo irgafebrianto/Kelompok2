@@ -8,7 +8,7 @@
                     <div class="panel-heading">Datakepegawaian</div>
                     <div class="panel-body">
 
-                        <a href="{{ url('/admin/datakepegawaian/create') }}" class="btn btn-primary btn-xs" title="Add New datakepegawaian"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></a>
+                        <a href="{{ url('/user/datakepegawaian/create') }}" class="btn btn-primary btn-xs" title="Add New datakepegawaian"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></a>
                         <br/>
                         <br/>
                         <div class="table-responsive">
@@ -26,6 +26,7 @@
                                         <td>
                                             <a href="{{ url('/user/datakepegawaian/' . $item->id) }}" class="btn btn-success btn-xs" title="View datakepegawaian"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
                                             <a href="{{ url('/user/datakepegawaian/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit datakepegawaian"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
+<<<<<<< HEAD
                                             {!! Form::open([
                                                 'method'=>'DELETE',
                                                 'url' => ['/admin/datakepegawaian', $item->id],
@@ -38,6 +39,9 @@
                                                         'onclick'=>'return confirm("Confirm delete?")'
                                                 )) !!}
                                             {!! Form::close() !!}
+=======
+                                            
+>>>>>>> ae9113d1b62c083145b467521c582a98c1719af7
                                         </td>
                                     </tr>
                                 @endforeach
