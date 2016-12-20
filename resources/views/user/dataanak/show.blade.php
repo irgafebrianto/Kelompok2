@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('user.layout')
 
 @section('content')
-    <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">dataanak {{ $dataanak->id }}</div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h2 class="panel-title" align="center"> Data Anak {{$dataanak->id}}</h2>
+                </div>
                     <div class="panel-body">
                          
                         <a href="{{ url('user/pegawai') }}" class="btn btn-danger btn-xs" title="Kembali"> Kembali<span baria-hidden="true"/></a>
@@ -33,5 +33,5 @@
                 </div>
             </div>
         </div>
-    </div>
+
 @endsection
