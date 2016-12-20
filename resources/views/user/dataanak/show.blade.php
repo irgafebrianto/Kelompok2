@@ -8,8 +8,9 @@
                 </div>
                     <div class="panel-body">
                          
-                        <a href="{{ url('user/pegawai') }}" class="btn btn-danger btn-xs" title="Kembali"> Kembali<span baria-hidden="true"/></a>
-                        
+                        <div class="panel-body">                   
+                       <a href="{{ url('user/pegawai') }}" class="glyphicon glyphicon-backward"> Back<span baria-hidden="true"/></a>
+
                         <a href="{{ url('user/dataanak/' . $dataanak->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit dataanak"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
                         
                         <br/>

@@ -1,35 +1,13 @@
 @extends('user.layout')
 
 @section('content')
-    <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">datakepegawaian {{ $datakepegawaian->id }}</div>
-                    <div class="panel-body">
-
-<<<<<<< HEAD
-                        <a href="{{ url('user/datakepegawaian/' . $datakepegawaian->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit datakepegawaian"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
-                        {!! Form::open([
-                            'method'=>'DELETE',
-                            'url' => ['admin/datakepegawaian', $datakepegawaian->id],
-                            'style' => 'display:inline'
-                        ]) !!}
-                            {!! Form::button('<span class="glyphicon glyphicon-trash" aria-hidden="true"/>', array(
-                                    'type' => 'submit',
-                                    'class' => 'btn btn-danger btn-xs',
-                                    'title' => 'Delete datakepegawaian',
-                                    'onclick'=>'return confirm("Confirm delete?")'
-                            ))!!}
-                        {!! Form::close() !!}
-=======
-                         <a href="{{ url('user/pegawai') }}" class="btn btn-danger btn-xs" title="Kembali"> Kembali<span baria-hidden="true"/></a>
-
-                        <a href="{{ url('user/datakepegawaian/' . $datakepegawaian->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit datakepegawaian"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
-                       
->>>>>>> ae9113d1b62c083145b467521c582a98c1719af7
-                        <br/>
-                        <br/>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h2 class="panel-title" align="center"> Data Kepegawaian {{$datakepegawaian->id}}</h2>
+                </div>
+                    <div class="panel-body">                   
+                       <a href="{{ url('user/pegawai') }}" class="glyphicon glyphicon-backward"> Back<span baria-hidden="true"/></a></br></br>
 
                         <div class="table-responsive">
                             <table class="table table-borderless">
@@ -52,5 +30,4 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection
