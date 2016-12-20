@@ -1,5 +1,6 @@
 @extends('user.layout')
-
+  
+  
 @section('content')
         <div class="row">
             <div class="panel panel-success">
