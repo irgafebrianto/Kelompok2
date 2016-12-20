@@ -20,7 +20,7 @@
 							<span>Dashboard Admin</span>
 						</a>
 					</li>
-					<li class="disabled">
+					<li>
 						<a href="{{url('/user/pegawai')}}">
 							<i class="fa fa-user" aria-hidden="true"></i>
 							<span>Dashboard User</span>
