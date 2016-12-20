@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('user.layout')
 
 @section('content')
     <div class="container">
@@ -8,7 +8,7 @@
                     <div class="panel-heading">datakepegawaian {{ $datakepegawaian->id }}</div>
                     <div class="panel-body">
 
-                        <a href="{{ url('admin/datakepegawaian/' . $datakepegawaian->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit datakepegawaian"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
+                        <a href="{{ url('user/datakepegawaian/' . $datakepegawaian->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit datakepegawaian"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
                         {!! Form::open([
                             'method'=>'DELETE',
                             'url' => ['admin/datakepegawaian', $datakepegawaian->id],

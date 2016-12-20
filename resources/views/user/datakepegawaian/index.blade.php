@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('user.layout')
 
 @section('content')
     <div class="container">
@@ -24,8 +24,8 @@
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->jabatan }}</td><td>{{ $item->golongan }}</td><td>{{ $item->status }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/datakepegawaian/' . $item->id) }}" class="btn btn-success btn-xs" title="View datakepegawaian"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
-                                            <a href="{{ url('/admin/datakepegawaian/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit datakepegawaian"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
+                                            <a href="{{ url('/user/datakepegawaian/' . $item->id) }}" class="btn btn-success btn-xs" title="View datakepegawaian"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
+                                            <a href="{{ url('/user/datakepegawaian/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit datakepegawaian"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
                                             {!! Form::open([
                                                 'method'=>'DELETE',
                                                 'url' => ['/admin/datakepegawaian', $item->id],
