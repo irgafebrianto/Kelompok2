@@ -17,7 +17,7 @@
                                         <div class="col-sm-12 col-md-9">
                                             <div id="datatable-default_filter" class="dataTables_filter">
                                     <td colspan="5">
-                                    <a href="{{ url('/usermg/pegawai/create') }}" class="btn btn-dark btn-xs" title="Add New pegawai"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></a>
+                                    <a href="{{ url('/user/pegawai/create') }}" class="btn btn-dark btn-xs" title="Add New pegawai"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></a>
                                      </td>
                                                 <label><input class="form-control" value="{{isset($_GET['search'])?$_GET['search']:''}}" name="search" placeholder="Search Nama" aria-controls="datatable-default">
                                                 </label></div>
