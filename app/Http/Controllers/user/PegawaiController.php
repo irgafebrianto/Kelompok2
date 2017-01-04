@@ -19,8 +19,10 @@ class PegawaiController extends Controller
     public function index(Request $request)
     {
         $pegawai = Pegawai::where('nama', 'LIKE', '%'.(isset($request->search)?$request->search:'').'%')
+            ->orwhere('alamat', 'LIKE', '%'.(isset($request->search)?$request->search:'').'%')
+            ->orwhere('nip', 'LIKE', '%'.(isset($request->search)?$request->search:'').'%')
             ->paginate(isset($request->pagination)?$request->pagination:($request->pagination));
-
+            
         return view('user.pegawai.index', compact('pegawai'));
     }
     /**
